@@ -1,0 +1,48 @@
+.body {
+    color: rgb(0, 0, 0);
+    background-color: white;
+    font-family: "Times New Roman";
+}
+.style2 {
+    margin-left: 40px;
+}
+.title {
+    text-align: center; font-size: xx-large;
+}
+.style3 {
+    margin-bottom: 5px; margin-left: 40px;
+}
+.style35 {
+    margin-top: 0px; margin-left: 65px;
+}
+.style4 {
+    margin-top: 0px; margin-left: 80px;
+}
+.listitem {
+    margin-top: 20px; margin-bottom: 10px; list-style-type: none;
+}
+.listitem2 {
+    margin-top: 5px; margin-bottom: 5px; list-style-type: none;
+}
+
+
+.subtitlestyle {
+    margin-top: 0px; margin-left: 40px;
+}
+
+
+.conferencecolor{
+    color: #6a6363;
+}
+
+
+.awardcolor{
+    color: #6a6363;
+    margin-left: 20px;
+}
+
+
+.expcolor{
+    color: #6a6363;
+    margin-left: 20px;
+}
