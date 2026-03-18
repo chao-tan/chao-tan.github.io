@@ -1,0 +1,242 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', 'Songti SC', 'SimSun', serif;
+    line-height: 1.7;
+    color: #333;
+    background-color: #f5f7fa;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.01em;
+    font-size: 15px;
+}
+
+/* 容器样式 */
+#content {
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    border: 1px solid #e8e8e8;
+}
+
+#content-inner {
+    padding: 0;
+}
+
+/* 头部样式 */
+.head {
+    margin-bottom: 30px;
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    background-color: transparent;
+    text-shadow: none;
+}
+
+.head h1 {
+    color: #2c3e50;
+    font-size: 24px;
+    margin-bottom: 12px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+/* 作者和机构样式 */
+.authors {
+    font-size: 1rem;
+    margin-bottom: 12px;
+}
+
+.affiliations {
+    font-size: 0.95rem;
+    color: #7f8c8d;
+    margin-bottom: 25px;
+}
+
+/* 章节样式 */
+.section {
+    margin-bottom: 35px;
+}
+
+.section h2 {
+    color: #1a252f;
+    font-size: 18px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    padding: 8px 0;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 0.02em;
+    font-family: 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+    border-bottom: none;
+}
+
+.section h2::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    transform: scaleX(0.3);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 8px;
+    height: 2px;
+    background: #0072ff;
+    border-radius: 1px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 0 8px #0072ff, 0 0 15px #00c6ff;
+}
+
+.section:hover h2::before {
+    transform: scaleX(1);
+}
+
+.section:hover h2::after {
+    transform: scaleX(1);
+    transition-delay: 0.1s;
+}
+
+/* 段落和链接样式 */
+p {
+    margin-bottom: 12px;
+    font-size: 1rem;
+    color: #333;
+    font-family: Georgia, 'Times New Roman', 'Songti SC', 'SimSun', serif;
+}
+
+a {
+    color: #2980b9;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    display: inline-block;
+}
+
+a:hover {
+    color: #1a5276;
+    text-decoration: none;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -1px;
+    left: 0;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+/* 图片样式 */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+}
+
+/* 列表样式 */
+ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: #34495e;
+    position: relative;
+}
+
+li::marker {
+    color: #3498db;
+}
+
+/* Citation 引用样式 - 学术论文风格 */
+.citation {
+    background-color: #fafafa;
+    padding: 20px 25px;
+    border-left: 4px solid #2c3e50;
+    border-radius: 4px;
+    margin-top: 30px;
+}
+
+.citation h2 {
+    font-size: 16px !important;
+    color: #2c3e50 !important;
+    margin-top: 0 !important;
+    margin-bottom: 15px !important;
+    font-weight: 700 !important;
+}
+
+.citation .bibtex {
+    background-color: #fff;
+    padding: 15px 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+
+.citation .bibtex pre {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #333;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    #content {
+        max-width: 90%;
+        padding: 18px;
+        margin: 15px auto;
+    }
+    
+    .head h1 {
+        font-size: 22px;
+    }
+    
+    .section h2 {
+        font-size: 16px;
+    }
+    
+    body {
+        font-size: 13px;
+    }
+}

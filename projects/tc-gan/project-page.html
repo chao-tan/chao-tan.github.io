@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><META content="IE=11.0000" http-equiv="X-UA-Compatible">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<TITLE>Unsupervised Shadow Removal using Target Consistency Generative Adversarial Network</TITLE>
+<LINK href="../project-style.css" rel="stylesheet" type="text/css">
+<META name="GENERATOR" content="MSHTML 11.00.10570.1001"></HEAD>
+
+
+
+
+
+
+<BODY class="body">
+<DIV id="content">
+    <DIV id="content-inner">
+        <DIV class="section head">
+            <H2 class="ppagefont">Unsupervised Shadow Removal using Target Consistency Generative Adversarial Network</H2>
+            <DIV class="authors"><A href="../../index.html">Chao Tan</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	  <span>Xin Feng</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Bin Chen</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Jianwu Long</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</DIV>
+            <DIV class="affiliations">
+                <P>Chongqing University of Technology</P>
+            </DIV>
+        </DIV>
+
+
+
+
+        <CENTER><IMG width="85%" src="model_structure.png" border="0"></CENTER>
+
+
+
+
+        <DIV class="section abstract">
+            <H2>Abstract</H2><BR>
+            <P>Unsupervised shadow removal aims to learn a mapping function that translates original
+                image from shadow domain to shadow-free domain in the absence of paired shadow
+                and shadow-free data. In this paper, we develop a simple yet efficient target consistence
+                generative adversarial network (TC-GAN) for unsupervised shadow removal. Compared
+                with the bidirectional mapping in cycle-consistency based methods for shadow removal,
+                TC-GAN only learns the one-sided mapping from shadow domain to shadow-free domain.
+                With the proposed target-consistency constraint, the correlations between shadow
+                image and the output shadow-free image is strictly confined and the many-to-one inverse
+                mapping problem can be solved. Extensive quantitative and qualitative comparison
+                experiments results show that TC-GAN outperforms the state-of-the-art methods by
+                14.9% improvement in terms of FID and 31.5% increasement in terms of KID, and even
+                achieves comparable performance with supervised shadow removal methods.
+            </P>
+        </DIV>
+
+
+
+
+        <DIV class="section Examples">
+            <H2>Examples</H2><BR>
+            <CENTER><IMG width="85%" src="examples.png" border="0"></CENTER>
+        </DIV>
+
+
+
+
+        <DIV class="section download">
+            <H2>Downloads</H2><HR size=2>
+            <UL>
+                <LI>
+                    <A href="ctan20_tc-gan.pdf">Full Paper</A>
+                </LI>
+
+                <LI>
+                    <A href="https://cloud.189.cn/t/vU7F73A3m2me" >TC-GAN Pretrained Model(TianYiCloud; 110MB)</A>
+                </LI>
+
+                <LI>
+                    <A href="https://pan.baidu.com/s/1NxpO0Ub8KJSg1m4NiRowKw" >TC-GAN Pretrained Model(BaiduCloud; Extraction code: h3zg)</A>
+                </LI>
+
+                <LI>
+                    <A href="https://github.com/chao-tan/TC-GAN" >Source Code(Github)</A>
+                </LI>
+
+                <LI>
+                    <A href="https://gitee.com/chao-tan/TC-GAN" >Source Code(Githee)</A>
+                </LI>
+            </UL>
+        </DIV>
+
+
+
+
+
+
+        <DIV class="section citation">
+            <H2>Citation</H2>
+            <DIV class="section bibtex">
+	<PRE class="timesnewroman">@inproceedings{9859634,
+        author={Tan, Chao and Feng, Xin and Chen, Bin and Long, Jianwu},
+        booktitle={2022 IEEE International Conference on Multimedia and Expo (ICME)}, 
+        title={TC-ShadowGAN: A Target-Consistency Generative Adversarial Network for Unpaired Shadow Removal}, 
+        year={2022},
+        volume={},
+        number={},
+        pages={01-06},
+        keywords={Deep learning;Correlation;Codes;Streaming media;Generative adversarial networks;Task analysis;Unpaired Shadow Removal;Generative Adversarial Networks},
+        doi={10.1109/ICME52920.2022.9859634}}
+	</PRE>
+            </DIV>
+        </DIV>
+    </DIV>
+</DIV>
+
+
+
+</BODY>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e73cc6353e0254fee8315d06b176a3fa";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</HTML>

@@ -1,0 +1,179 @@
+0
+00:00:00,830 --> 00:00:08,390
+Hello everyone, the title of my presentation is "Generating the Cloud Motion Winds Field from Satellite Cloud Imagery Using Deep Learning Approach".
+
+1
+00:00:09,430 --> 00:00:12,950
+My name is Chao Tan, from Chongqing University of Technology.
+
+2
+00:00:14,340 --> 00:00:19,860
+Cloud motion winds field is derived from geostationary satellite-observed motions of clouds features.
+
+3
+00:00:20,820 --> 00:00:30,260
+The algorithm estimates the average motion vectors of the atmosphere in a certain area based on the movement of the same cloud mass in two consecutive infrared satellite cloud imageries.
+
+4
+00:00:31,460 --> 00:00:38,700
+Cloud motion winds field have been shown to provide reasonable estimates of the ambient tropospheric wind, and its application is wide ranging.
+
+5
+00:00:39,610 --> 00:00:44,770
+It contributes to forecast diagnostics of weather conditions, as well as numerical weather prediction.
+
+6
+00:00:45,620 --> 00:00:52,980
+In addition, cloud motion winds field can also provide basic guidance for such field as ultraviolet index and solar energy prediction.
+
+7
+00:00:54,230 --> 00:00:58,630
+With the application of image processing and machine learning technology in various fields,
+
+8
+00:00:59,120 --> 00:01:05,200
+we noticed that the cloud motion wind algorithm is similar to the task of optical flow estimation in computer vision.
+
+9
+00:01:06,060 --> 00:01:12,940
+Therefore, we formalized the cloud motion wind estimation task as the problem of unsupervised dense optical flow prediction.
+
+10
+00:01:14,030 --> 00:01:19,830
+Unlike traditional image processing methods, we use deep learning methods to learn the feature representation automatically,
+
+11
+00:01:20,500 --> 00:01:24,340
+and it also greatly improve the calculation speed and efficiency of the algorithm.
+
+12
+00:01:25,200 --> 00:01:28,680
+It is worth noting that duo to the uncertainty of atmospheric movement,
+
+13
+00:01:29,180 --> 00:01:33,620
+the brightness consistency between two adjacent satellite cloud imageries is not guaranteed,
+
+14
+00:01:34,300 --> 00:01:39,780
+so the unsupervised optic flow estimation based on photometric consistency is not suitable for use.
+
+15
+00:01:40,670 --> 00:01:46,830
+In addition, cloud motion winds estimation often requires more robust performance than optical flow prediction,
+
+16
+00:01:47,280 --> 00:01:51,240
+and a large-scale dataset is also required for training the deep learning models.
+
+17
+00:01:52,430 --> 00:01:59,590
+In order to train our deep learning model, we first propose a brand-new large-scale cloud motion winds dataset named CMWD,
+
+18
+00:02:00,500 --> 00:02:05,140
+which contains more than 6300 training samples and 700 testing samples.
+
+19
+00:02:06,050 --> 00:02:13,490
+Each sample consists of two geostationary satellite cloud imageries, taken a one-hour intervals over a vast of the Pacific Northwest.
+
+20
+00:02:14,530 --> 00:02:22,090
+In order to visualize the output optical flow, we encode the generated two-dimensional flow field with color in the HSV color model.
+
+21
+00:02:22,950 --> 00:02:27,750
+During the training phase, we use PCA-Flow to generate it as the supervision for the model.
+
+22
+00:02:28,490 --> 00:02:35,770
+In addition, we also convert the generated vector field into two visualization products, one is the common dense vector arrow diagram.
+
+23
+00:02:36,950 --> 00:02:42,910
+The other is the flux streamline diagram, which can continuously display the direction and intensity of the wind field.
+
+24
+00:02:44,150 --> 00:02:50,630
+We use FlowNet-S as a reference network and this architecture consists of a contractive part followed by an expanding part.
+
+25
+00:02:51,660 --> 00:02:59,700
+The contractive part takes as input two infrared cloud imageries stacked together, and processes them with a cascade of stride deconvolution layers.
+
+26
+00:03:00,690 --> 00:03:03,690
+The expanding part implements a "skip layer" architecture
+
+27
+00:03:04,030 --> 00:03:12,190
+that combines information from various levels of contractive part with "up convolving" layers to iteratively refine the coarse cloud motion winds filed predictions.
+
+28
+00:03:13,200 --> 00:03:21,200
+In addition, we use endpoint error (EPE) during the training process, and we use several intermediate losses placed at various stages of the expansionary part.
+
+29
+00:03:22,230 --> 00:03:26,910
+The intermediate losses are meant to guide earlier layers more directly towards the final objective.
+
+30
+00:03:27,990 --> 00:03:34,030
+We first use the paired infrared satellite cloud imagery on CMWD dataset to conduct the experiment.
+
+31
+00:03:34,860 --> 00:03:40,740
+It can be seen from the experimental results that our model can well estimate the upper-air wind motion at its location,
+
+32
+00:03:41,180 --> 00:03:46,220
+whether it is a large air mass movement or a small-to-medium-scale anticyclonic spiral movement.
+
+33
+00:03:47,410 --> 00:03:54,690
+We also try to use single infrared cloud imagery to estimate the cloud motion winds field, which is not feasible for conventional methods.
+
+34
+00:03:55,790 --> 00:03:59,270
+However, because deep neural network can learn from a large amount of data, 
+
+35
+00:03:59,720 --> 00:04:06,080
+many basic patterns of atmospheric motion can be detected by the model, and then predict through the state of the whole cloud system.
+
+36
+00:04:06,880 --> 00:04:10,920
+From the experimental results, it can be seen that even with only one input image,
+
+37
+00:04:11,430 --> 00:04:16,510
+our model is still able to make a rough estimate of cloud motion winds field under the current situation.
+
+38
+00:04:17,600 --> 00:04:23,000
+Meanwhile, our model can separate different cloud structures in cloud imagery and make different estimates accordingly.
+
+39
+00:04:24,400 --> 00:04:30,280
+Here are the dynamic image samples with paired and single cloud imagery superimposed on flux streamline diagram,
+
+40
+00:04:30,890 --> 00:04:34,170
+from which we can intuitively see the effectiveness of our proposed method.
+
+41
+00:04:35,250 --> 00:04:40,970
+In this work, we propose to use a deep convolutional neural network to estimate the cloud motion winds field.
+
+42
+00:04:42,180 --> 00:04:46,900
+Meanwhile, we also present a large-scale cloud motion winds dataset for deep learning research.
+
+43
+00:04:48,110 --> 00:04:55,670
+The experimental results illustrate the efficient performance of our model, and it can also handle the case without paired satellite cloud imagery input.
+
+44
+00:04:57,100 --> 00:04:58,100
+That's all. Thank you.
